@@ -1,8 +1,14 @@
 @extends('layouts.master')
+@section('navbar')
+	<thead>
+		<ul>
+	  		<li><a class="active" href="/logout">Logout</a></li>
+		</ul>
+	</thead>
+@endsection
 @section('content')
 	<div class="container">
 		<table class="table">
-			<thead>
 				<tr>
 					<th scope="col">ID</th>
 					<th scope="col">Title</th>
@@ -10,7 +16,6 @@
 					<th scope="col">Due Date</th>
 					<th scope="col">Actions</th>
 				</tr>
-			</thead>
 			<tbody>
 				@foreach($projects as $project)
 					<tr>
@@ -26,7 +31,4 @@
 		</table>
 		<a class="btn btn-primary" href='/projects/add'>Add New Project</a>
 	</br>
-	</br>
-		<a class="btn btn-primary" href='/logout'>Logout</a>
-	</div>
 @endsection

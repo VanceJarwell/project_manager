@@ -43,15 +43,17 @@ class ProjectsController extends Controller
     
     public function edit(Project $project)
     {
-        request()->validate([
-            'title' => 'required',
-            'description' => 'required'
-        ]);
         return view('projects.edit')->with('project', $project);
     }
 
     public function update(Project $project)
     {
+        request()->validate([
+            'title' => 'required',
+            'description' => 'required',
+            'due_date' => 'required'
+        ]);
+        
         $project->title = request()->title;
         $project->description = request()->description;
         $project->due_date = request()->due_date;
