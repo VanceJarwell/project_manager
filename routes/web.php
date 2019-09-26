@@ -27,5 +27,9 @@ Route::middleware('auth')->group(function() {
 	Route::get('/projects/tasks/{task}/edit', 'TasksController@edit');
 	Route::post('/projects/tasks/{task}/update', 'TasksController@update');
 	Route::post('/projects/{project}/tasks', 'TasksController@store');
+
+	Route::get('/teams', 'TeamsController@index');
+	Route::get('/teams/add', 'TeamsController@create');
+	Route::post('/teams/store', 'TeamsController@store');
 	
 });
